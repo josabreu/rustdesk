@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "Inova Security" "\0"
-            VALUE "FileDescription", "Inova Security Suporte Remoto" "\0"
+            VALUE "FileDescription", "Inova Suporte Remoto" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "rustdesk" "\0"
             VALUE "LegalCopyright", "Copyright (c) 2026 Inova Security. All rights reserved." "\0"
             VALUE "OriginalFilename", "rustdesk.exe" "\0"
-            VALUE "ProductName", "Inova Security" "\0"
+            VALUE "ProductName", "Inova Suporte Remoto" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
