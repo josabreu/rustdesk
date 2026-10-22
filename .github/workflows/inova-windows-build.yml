@@ -149,12 +149,15 @@ jobs:
         shell: bash
         run: |
           sed -i '/dpiAware/d' res/manifest.xml
+          # o instalador copia a pasta e cria atalho/serviço para "<APP_NAME>.exe";
+          # o binário do Flutter sai como rustdesk.exe → renomear senão o atalho fica quebrado
+          mv ./rustdesk/rustdesk.exe ./rustdesk/InovaSecurity.exe
           pushd ./libs/portable
           pip3 install -r requirements.txt
-          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/rustdesk.exe
+          python3 ./generate.py -f ../../rustdesk/ -o . -e ../../rustdesk/InovaSecurity.exe
           popd
           mkdir -p ./SignOutput
-          mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/InovaSecurity-${{ env.VERSION }}-x64.exe
+          mv ./target/release/rustdesk-portable-packer.exe ./SignOutput/InovaSecurity-${{ env.VERSION }}-3-x64.exe
 
       - name: Upload installer
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
